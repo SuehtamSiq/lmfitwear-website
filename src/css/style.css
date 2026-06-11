@@ -929,10 +929,14 @@ body {
 
 @media (max-width: 480px) {
     .cart-panel {
-        width: calc(100vw - 40px);
-        bottom: 70px;
-        right: 20px;
+        /* Muda para fixed para alinhar com base na tela inteira, não no botão */
+        position: fixed; 
+        /* Define a largura total menos as margens laterais */
+        width: calc(100vw - 40px); 
+        /* Posiciona fixo a 20px de cada borda da tela */
+        bottom: 90px; /* Ajustado para ficar logo acima do botão do carrinho */
         left: 20px;
+        right: 20px;
     }
 }
 
