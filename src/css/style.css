@@ -29,16 +29,6 @@
     font-weight: 700;
     position: relative;
 
-    &::before {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 4px;
-        background-color: var(--accent-purple);
-        position: absolute;
-        bottom: 0;
-        border-radius: 30px;
-    }
 }
 
 a.btn {
@@ -181,16 +171,26 @@ header {
         height: auto;
     }
 
-    .home-title {
-        color: var(--primary-purple);
-        text-align: center;
-        font-size: clamp(2.2rem, 5vw, 3.8rem);
-        text-transform: uppercase;
-        line-height: 1.2;
-        max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+.home-title {
+    color: var(--primary-purple);
+    text-align: center;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    text-transform: uppercase;
+    line-height: 1.2;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    
+
+    .home-subtitle {
+        color: var(--accent-purple);
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        text-transform: none;
+        font-weight: 400;
+    }
+}
 
         .home-subtitle { /* Ajustado para a classe correta do HTML */
             color: var(--accent-purple);
@@ -217,6 +217,7 @@ header {
         justify-content: center;
     }
 }
+
 
 #trending {
     padding: 32px 4%;
@@ -268,12 +269,77 @@ header {
 
 @media (min-width: 768px) {
 
+#trending {
+    padding: 60px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+
+    /* Ajuste para funcionar perfeitamente no celular por padrão */
+    .trending-cards {
+        display: flex;
+        flex-direction: column; /* Coluna no celular */
+        align-items: center;
+        gap: 32px;
+        width: 100%;
+    }
+
+    .trending-card {
+        position: relative;
+        background-color: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave aesthetic */
+        padding-bottom: 15px;
+        width: 100%;
+        max-width: 320px; /* Garante tamanho ótimo no celular */
+
+        img {
+            width: 100%; /* Ocupa o espaço do card */
+            height: 380px; /* Altura fixa padrão para fotos de look ficarem alinhadas */
+            object-fit: cover; /* Não distorce a imagem do produto */
+            display: block;
+        }
+
+        .trending-rate {
+            background-color: var(--accent-purple);
+            position: absolute;
+            top: 20px; /* Mudado de bottom para top para não sumir atrás do texto */
+            right: 20px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+
+            i {
+                color: #FFD700; /* Estrela dourada destaca mais */
+                margin-left: 4px;
+            }
+        }
+
+        .trending-card-description {
+            padding: 15px 10px 5px 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-purple);
+        }
+    }
+}
+
+/* Responsividade para telas maiores (Tablet e PC) */
+@media (min-width: 768px) {
     #trending {
         .trending-cards {
-            display: flex;
+            flex-direction: row; /* Fica lado a lado no PC */
             justify-content: center;
             flex-wrap: wrap;
             gap: 24px;
+        }
     }
 }
+
 }
