@@ -43,6 +43,7 @@ header {
     z-index: 100;
     box-shadow: 0 2px 12px rgba(123, 91, 168, 0.08);
     transition: all 0.3s ease;
+    overflow: visible;
 }
 
 .navbar {
@@ -89,18 +90,17 @@ header {
     list-style: none;
     flex-direction: column;
     gap: 1.5rem;
-    width: 100%;
     position: absolute;
-    top: calc(100% + 12px);
+    top: 100%;
+    left: 4%;
+    right: 4%;
+    width: calc(100% - 8%);
     background-color: var(--white);
-    left: 0;
-    right: 0;
     padding: 1.5rem 1rem;
     box-shadow: 0 8px 24px rgba(123, 91, 168, 0.15);
     border-radius: 12px;
-    margin: 0 4%;
-    width: calc(100% - 8%);
-    z-index: 100;
+    z-index: 1000;
+    margin-top: 8px;
     animation: slideDown 0.3s ease-out;
 }
 
