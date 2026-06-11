@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LM Fitwear | Moda Fitness</title>
+    <title>LM Fitwear | Moda Fitness Premium</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,200 +11,356 @@
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
-    <!-- Cabeçalho com navegação -->
-    <header>
+    <!-- ============================================
+         HEADER STICKY COM NAVEGAÇÃO
+         ============================================ -->
+    <header class="header">
         <nav class="navbar">
-           <img src="src/images/logo_LM.PNG" alt="LM Fitwear Logo" class="logo">
+            <img src="src/images/logo_LM.PNG" alt="LM Fitwear Logo" class="logo">
 
-            <button class="btn btn-mobile">
+            <button class="btn-mobile" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
 
-           <ul id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#trending">Em alta</a></li>
-                <li><a href="#products">Produtos</a></li>
-                <li><a href="#about">Sobre Nós</a></li>
-           </ul>
-           <a href="#" class="btn btn-default">Contato</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#trending">Em Alta</a></li>
+                <li><a href="#produtos">Coleção</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+
+            <!-- Badge do carrinho no header (opcional, redundante com float) -->
+            <div class="cart-badge" id="headerCart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="badge-count" id="headerBadge">0</span>
+            </div>
         </nav>
     </header>
 
-    <!-- MAIN -->
-     <main id="container">
-        <!-- Seção Home -->
-        <section id="home">
-            <img src="src/images/Img_de_Destaque.PNG" alt="Imagem de destaque" class="home-image">
-            <h1 class="home-title">Bem-vindo à LM Fitwear
-                <span class="home-subtitle">Moda fitness para todos os estilos</span>
-            </h1>
+    <main id="container">
+        <!-- ============================================
+             SEÇÃO HERO - LIFESTYLE + PROPOSTA
+             ============================================ -->
+        <section id="hero" class="hero">
+            <!-- IMAGEM HERO BACKGROUND
+                 RECOMENDAÇÃO: Imagem lifestyle de mulher em fitness wear
+                 Dimensão: 1920x600px
+                 Descrição: Mulher confiante em ambiente elegante (studio/outdoor)
+                 Lighting: Natural e sofisticado
+                 Estilo: Premium, aspiracional
+                 Banco: Unsplash, Pexels, Adobe Stock
+            -->
+            <div class="hero-background">
+                <img src="src/images/hero-lifestyle.jpg" alt="Mulher em fitness wear" class="hero-image">
+                <div class="hero-overlay"></div>
+            </div>
 
-            <p class="home-description">Descubra nossa coleção de roupas fitness que combinam estilo e conforto para suas atividades físicas.</p>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Moda Fitness Premium
+                    <span class="hero-subtitle">Você Veste Sua Força</span>
+                </h1>
+                <p class="hero-description">Conforto, estilo e sofisticação em cada peça. Feito para quem não abre mão da qualidade.</p>
 
-            <div class="home-actions">
-                <a href="#products" class="btn btn-default">Confira nossos produtos</a>
-                <a href="#products" class="btn btn-outlined">Contatar</a>
+                <a href="#trending" class="btn btn-primary">
+                    <i class="fas fa-arrow-down"></i> Explorar Coleção
+                </a>
             </div>
         </section>
 
-        <!-- Tranding -->
-        <section id="trending">
-    <h2 class="section-title">Em alta</h2>
+        <!-- ============================================
+             DIVISOR ELEGANTE
+             RECOMENDAÇÃO: Padrão sutil ou gradiente
+        ============================================ -->
+        <div class="section-divider"></div>
 
-    <!-- Abre o container geral dos cards -->
-    <div class="trending-cards">
-        
-        <!-- Card 1 -->
-        <div class="trending-card">
-            <img src="src/images/Trending/card1.jpeg" alt="Produto 1">
-            <div class="trending-rate">
-                <p>R$ 49,99 <i class="fas fa-star"></i></p>
+        <!-- ============================================
+             SEÇÃO TRENDING - BESTSELLERS
+             ============================================ -->
+        <section id="trending" class="trending">
+            <div class="section-header">
+                <h2 class="section-title">✨ Em Alta</h2>
+                <p class="section-subtitle">Os favoritos das nossas clientes</p>
             </div>
-            <p class="trending-card-description">Top Emilly</p>
+
+            <div class="trending-grid">
+                <!-- CARDS TRENDING - 3 produtos
+                     Cada card mantém a imagem do produto
+                     Botão interativo para adicionar ao carrinho
+                -->
+                <article class="trending-card" data-product-id="1">
+                    <div class="card-image-wrapper">
+                        <img src="src/images/Trending/card1.jpeg" alt="Top Emilly" class="card-image">
+                        <div class="card-overlay">
+                            <p class="card-price">R$ 49,99</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Top Emilly</h3>
+                        <p class="card-desc">Conforto máximo para treinos intensos</p>
+                        <button class="btn btn-add-cart" onclick="addToCart('Top Emilly', 49.99, 1)">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="trending-card" data-product-id="2">
+                    <div class="card-image-wrapper">
+                        <img src="src/images/Trending/card2.jpeg" alt="Calça Legging Inverno" class="card-image">
+                        <div class="card-overlay">
+                            <p class="card-price">R$ 89,99</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Calça Legging Inverno</h3>
+                        <p class="card-desc">Tecido premium, moldura perfeita</p>
+                        <button class="btn btn-add-cart" onclick="addToCart('Calça Legging Inverno', 89.99, 1)">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="trending-card" data-product-id="3">
+                    <div class="card-image-wrapper">
+                        <img src="src/images/Trending/card3.jpeg" alt="Macaquinho Brilhoso" class="card-image">
+                        <div class="card-overlay">
+                            <p class="card-price">R$ 123,99</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Macaquinho Brilhoso</h3>
+                        <p class="card-desc">Elegância e liberdade de movimento</p>
+                        <button class="btn btn-add-cart" onclick="addToCart('Macaquinho Brilhoso', 123.99, 1)">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO CATÁLOGO COMPLETO
+             ============================================ -->
+        <section id="produtos" class="catalogo">
+            <div class="section-header">
+                <h2 class="section-title">🛍️ Coleção de Lançamento</h2>
+                <p class="section-subtitle">Descubra todas as nossas peças exclusivas</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- PRODUTO 1 -->
+                <article class="product-card" data-product-id="p1">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/1.jpeg" alt="Conjunto Izabely" class="product-image">
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Izabely</h3>
+                        <p class="product-price">R$ 129,99</p>
+                        <p class="product-desc">Top + Shorts combinados</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Izabely', 129.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 2 -->
+                <article class="product-card" data-product-id="p2">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/2.jpeg" alt="Conjunto Silvia" class="product-image">
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Silvia</h3>
+                        <p class="product-price">R$ 149,99</p>
+                        <p class="product-desc">Elegância em movimento</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Silvia', 149.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 3 -->
+                <article class="product-card" data-product-id="p3">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/3.jpeg" alt="Top Larissa" class="product-image">
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Top Larissa</h3>
+                        <p class="product-price">R$ 49,99</p>
+                        <p class="product-desc">Frente Única - Versátil</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Top Larissa', 49.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 4 -->
+                <article class="product-card" data-product-id="p4">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/4.jpeg" alt="Conjunto Gisele" class="product-image">
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Gisele</h3>
+                        <p class="product-price">R$ 114,99</p>
+                        <p class="product-desc">Conforto premium</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Gisele', 114.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 5 -->
+                <article class="product-card" data-product-id="p5">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/5.jpeg" alt="Legging Gabriela" class="product-image">
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Jaqueta LM Roxa</h3>
+                        <p class="product-price">R$ 134,99</p>
+                        <p class="product-desc">Cintura alta, moldura perfeita</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Roxa', 134.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 6 -->
+                <article class="product-card" data-product-id="p6">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/6.jpeg" alt="Top Carolina" class="product-image">
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Jaqueta LM Lilás</h3>
+                        <p class="product-price">R$ 134,99</p>
+                        <p class="product-desc">Suporte e elegância</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Lilás', 134.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 7 -->
+                <article class="product-card" data-product-id="p7">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/7.jpeg" alt="Shorts Brenda" class="product-image">
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Jaqueta LM Marrom</h3>
+                        <p class="product-price">R$ 134,99</p>
+                        <p class="product-desc">Mobilidade total</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Marrom', 134.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 8 -->
+                <article class="product-card" data-product-id="p8">
+                    <div class="product-image-wrapper">
+                        <img src="src/images/products/8.jpeg" alt="Macacão Premium" class="product-image">
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Jaqueta LM Preta</h3>
+                        <p class="product-price">R$ 134,99</p>
+                        <p class="product-desc">Sofisticação em um look</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Preta', 134.99, 1)">
+                            <i class="fas fa-shopping-bag"></i> Adicionar
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO ABOUT - EXPANDIDA (OPCIONAL MAS RECOMENDADA)
+             IMAGEM RECOMENDADA: Lifestyle diferente da hero
+             Mulher usando produtos em contexto real (gym/rua/natural)
+        ============================================ -->
+        <section id="sobre" class="about">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="src/images/about-lifestyle.jpg" alt="Mulher em contexto real com LM Fitwear" class="about-img">
+                </div>
+                <div class="about-content">
+                    <h2 class="about-title">Por que <span>LM Fitwear</span>?</h2>
+                    <p class="about-text">
+                        Somos mais que moda fitness. Somos confiança, qualidade e estilo em cada peça.
+                        Criamos para mulheres que entendem que treinar com estilo é treinar melhor.
+                    </p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check"></i> Tecidos premium e sustentáveis</li>
+                        <li><i class="fas fa-check"></i> Design pensado no corpo feminino</li>
+                        <li><i class="fas fa-check"></i> Moldagem perfeita em movimento</li>
+                        <li><i class="fas fa-check"></i> Produção ética e responsável</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         WIDGET CARRINHO FLUTUANTE - ELEMENTO FIXO
+         ESTE É O CORAÇÃO DA EXPERIÊNCIA DO USUÁRIO
+    ============================================ -->
+    <div class="cart-widget" id="cartWidget">
+        <!-- Botão flutuante compacto -->
+        <div class="cart-button" id="cartButton">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <span class="cart-label">Pedido</span>
         </div>
 
-        <!-- Card 2 -->
-        <div class="trending-card">
-            <img src="src/images/Trending/card2.jpeg" alt="Produto 2">
-            <div class="trending-rate">
-                <p>R$ 89,99 <i class="fas fa-star"></i></p>
+        <!-- Panel expansível com lista de itens -->
+        <div class="cart-panel" id="cartPanel">
+            <div class="cart-header">
+                <h3>Seu Pedido</h3>
+                <button class="close-cart" onclick="toggleCart()" aria-label="Fechar carrinho">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <p class="trending-card-description">Calça Legging Inverno</p>
-        </div>
 
-        <!-- Card 3 -->
-        <div class="trending-card">
-            <img src="src/images/Trending/card3.jpeg" alt="Produto 3">
-            <div class="trending-rate">
-                <p>R$ 123,99 <i class="fas fa-star"></i></p>
+            <div class="cart-items" id="cartItems">
+                <!-- Items adicionados dinamicamente pelo JS -->
+                <div class="cart-empty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Nenhum item adicionado ainda</p>
+                    <small>Clique em "Adicionar" nos produtos!</small>
+                </div>
             </div>
-            <p class="trending-card-description">Macaquinho Brilhoso</p>
-        </div>
 
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">R$ 0,00</span>
+                </div>
+            </div>
+
+            <button class="btn btn-whatsapp" onclick="sendToWhatsApp()" id="whatsappBtn">
+                <i class="fab fa-whatsapp"></i> Enviar Pedido
+            </button>
+        </div>
     </div>
-        </section>
 
-        <!-- Products -->
-        <section id="products">
-            <h2 class="title">Coleção de Lançamento</h2>
-            <div class="products-cards">
-                <div class="product-card">
-                    <img src="src/images/products/1.jpeg" alt="Produto 1">
-                    <div class="product-content">
-                        <h3>
-                            Conjunto Izabely
-                            <span>R$ 129,99</span>
-                        </h3>
+    <!-- Toast Notification (feedback ao adicionar) -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Item adicionado!</span>
+    </div>
 
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="src/images/products/2.jpeg" alt="Produto 2">
-                    <div class="product-content">
-                        <h3>
-                            Conjunto Silvia
-                            <span>R$ 149,99</span>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="src/images/products/3.jpeg" alt="Produto 3">
-                    <div class="product-content">
-                        <h3>
-                            Top Larissa (Frente Única)
-                            <span>R$ 49,99</span>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="src/images/products/4.jpeg" alt="Produto 4">
-                    <div class="product-content">
-                        <h3>
-                            Conjunto Gisele
-                            <span>R$ 114,99</span>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="src/images/products/5.jpeg" alt="Produto 5">
-                    <div class="product-content">
-                        <h3>
-                            Jaqueta LM Roxo
-                            <span>R$ 139,99</span>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="src/images/products/6.jpeg" alt="Produto 6">
-                    <div class="product-content">
-                        <h3>
-                            Jaqueta LM Lilás
-                            <span>R$ 139,99</span>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="src/images/products/7.jpeg" alt="Produto 7">
-                    <div class="product-content">
-                        <h3>
-                            Jaqueta LM Marrom
-                            <span>R$ 139,99</span>
-                        </h3>
-
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="src/images/products/8.jpeg" alt="Produto 8">
-                    <div class="product-content">
-                        <h3>
-                            Jaqueta LM Preta
-                            <span>R$ 139,99</span>
-                        </h3>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sobre Nós -->
-        <section id="about">
-            <h2 class="section-title">Sobre Nós</h2>
-            <div class="about-content">
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <i class="fas fa-book"></i>
-                        <h3>Nossa <span>História</span></h3>
-                    </div>
-                    <p>
-                        A LM Fitwear nasceu da paixão por moda fitness e do desejo de oferecer roupas que unam estilo e conforto. Fundada em 2026, nossa marca tem como missão inspirar pessoas a se sentirem confiantes e motivadas durante suas atividades físicas.
-                    </p>
-                </div>
-
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <i class="fas fa-target"></i>
-                        <h3>Nosso <span>Propósito</span></h3>
-                    </div>
-                    <p>
-                        Empoderar nossos clientes a se sentirem confiantes e confortáveis em suas roupas fitness. Acreditamos que a moda pode ser uma forma de expressão e motivação para um estilo de vida saudável e ativo.
-                    </p>
-                </div>
-            </div>
-        </section>
-     </main>
-
+    <!-- Scripts -->
     <script src="src/js/script.js"></script>
 </body>
 </html>

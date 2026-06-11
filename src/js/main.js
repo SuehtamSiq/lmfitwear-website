@@ -8,8 +8,8 @@ const cartState = {
     total: 0
 };
 
-// Número WhatsApp
-const WHATSAPP_NUMBER = '5511940245180'; // Formato: país + DDD + número (sem formatação)
+// Número WhatsApp (Configure com seu número)
+const WHATSAPP_NUMBER = '5585987654321'; // Formato: país + DDD + número (sem formatação)
 
 /* ================================================
    FUNÇÕES DE CARRINHO
