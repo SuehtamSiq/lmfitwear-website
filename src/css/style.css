@@ -51,7 +51,7 @@ header {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 40px;
+    gap: 24px;
 }
 
 .logo {
@@ -60,7 +60,6 @@ header {
     object-fit: contain;
     transition: transform 0.3s ease;
     flex-shrink: 0;
-    margin-right: 20px;
 }
 
 .logo:hover {
@@ -75,6 +74,9 @@ header {
     color: var(--purple-600);
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 8px;
+    margin-left: auto;
+    z-index: 101;
 }
 
 .btn-mobile:hover {
@@ -88,12 +90,29 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
-    position: auto;
-    top: 100%;
+    position: absolute;
+    top: calc(100% + 12px);
     background-color: var(--white);
     left: 0;
-    padding: 2rem 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    right: 0;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 8px 24px rgba(123, 91, 168, 0.15);
+    border-radius: 12px;
+    margin: 0 4%;
+    width: calc(100% - 8%);
+    z-index: 100;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #nav-links.show {
@@ -136,6 +155,10 @@ header .btn-default {
     display: none;
 }
 
+header {
+    position: relative;
+}
+
 @media (min-width: 768px) {
     #nav-links {
         display: flex !important;
@@ -148,6 +171,12 @@ header .btn-default {
         margin: 0 auto;
         flex: 1;
         justify-content: center;
+        animation: none;
+        top: auto;
+        left: auto;
+        right: auto;
+        background-color: transparent;
+        border-radius: 0;
     }
 
     #nav-links li {
