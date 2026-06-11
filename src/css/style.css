@@ -51,7 +51,7 @@ header {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 24px;
+    gap: 40px;
 }
 
 .logo {
@@ -60,6 +60,7 @@ header {
     object-fit: contain;
     transition: transform 0.3s ease;
     flex-shrink: 0;
+    margin-right: 20px;
 }
 
 .logo:hover {
@@ -87,7 +88,7 @@ header {
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
-    position: absolute;
+    position: auto;
     top: 100%;
     background-color: var(--white);
     left: 0;
@@ -140,10 +141,13 @@ header .btn-default {
         display: flex !important;
         position: static;
         flex-direction: row;
-        gap: 2.5rem;
+        gap: 3rem;
         width: auto;
         padding: 0;
         box-shadow: none;
+        margin: 0 auto;
+        flex: 1;
+        justify-content: center;
     }
 
     #nav-links li {
@@ -156,6 +160,7 @@ header .btn-default {
 
     header .btn-default {
         display: inline-flex;
+        margin-left: auto;
     }
 }
 
