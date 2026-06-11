@@ -69,6 +69,8 @@ header {
 
 .btn-mobile {
     display: flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: none;
     font-size: 1.5rem;
@@ -78,11 +80,18 @@ header {
     padding: 8px;
     margin-left: auto;
     z-index: 101;
+    width: 40px;
+    height: 40px;
 }
 
 .btn-mobile:hover {
     color: var(--purple-500);
     transform: scale(1.1);
+}
+
+.btn-mobile i {
+    display: block;
+    font-size: 1.5rem;
 }
 
 #nav-links {
@@ -99,24 +108,13 @@ header {
     padding: 1.5rem 1rem;
     box-shadow: 0 8px 24px rgba(123, 91, 168, 0.15);
     border-radius: 12px;
-    z-index: 1000;
+    z-index: 999;
     margin-top: 8px;
-    animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 #nav-links.show {
-    display: flex;
+    display: flex !important;
+    animation: slideDown 0.3s ease-out;
 }
 
 #nav-links li {
