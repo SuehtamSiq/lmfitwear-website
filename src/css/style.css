@@ -39,7 +39,7 @@ header {
     background-color: var(--white);
     position: sticky;
     top: 0;
-    padding: 16px 4%;
+    padding: 12px 4%;
     z-index: 100;
     box-shadow: 0 2px 12px rgba(123, 91, 168, 0.08);
     transition: all 0.3s ease;
@@ -51,13 +51,15 @@ header {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
+    gap: 24px;
 }
 
 .logo {
-    width: 140px;
+    width: 110px;
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .logo:hover {
@@ -104,7 +106,7 @@ header {
 #nav-links a {
     color: var(--text-dark);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
@@ -159,11 +161,11 @@ header .btn-default {
 
 /* === BUTTONS === */
 .btn {
-    padding: 12px 28px;
+    padding: 10px 22px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -519,11 +521,11 @@ header .btn-default {
 /* === RESPONSIVE DESIGN === */
 @media (min-width: 768px) {
     header {
-        padding: 16px 6%;
+        padding: 12px 6%;
     }
 
     .navbar {
-        gap: 32px;
+        gap: 28px;
     }
 
     .home-actions {
