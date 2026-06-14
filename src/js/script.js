@@ -187,12 +187,12 @@ function generateWhatsAppMessage() {
         return null;
     }
 
-    let message = `*Olá! 👋 Gostaria de fazer um pedido:*\n\n`;
+    let message = `*Olá! Gostaria de fazer um pedido:*\n\n`;
 
     // Lista todos os items
     cartState.items.forEach(item => {
         const itemTotal = item.price * item.quantity;
-        message += `🛍️ *${item.name}*\n`;
+        message += `*${item.name}*\n`;
         message += `   Preço: ${formatCurrency(item.price)}\n`;
         message += `   Quantidade: ${item.quantity}\n`;
         message += `   Subtotal: ${formatCurrency(itemTotal)}\n\n`;
@@ -202,7 +202,7 @@ function generateWhatsAppMessage() {
     message += `━━━━━━━━━━━━━━━━━━━━━\n`;
     message += `*TOTAL: ${formatCurrency(cartState.total)}*\n`;
     message += `━━━━━━━━━━━━━━━━━━━━━\n\n`;
-    message += `Poderia confirmar disponibilidade e entrega? 💕`;
+    message += `Poderia confirmar disponibilidade e entrega?`;
 
     return message;
 }
