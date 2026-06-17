@@ -5,7 +5,8 @@
 // Estado global do carrinho
 const cartState = {
     items: [],
-    total: 0
+    total: 0,
+    paymentMethod: 'pix'
 };
 
 // Número WhatsApp
@@ -18,10 +19,11 @@ const WHATSAPP_NUMBER = '5511940245180'; // Formato: país + DDD + número (sem 
 /**
  * Adiciona item ao carrinho
  * @param {string} productName - Nome do produto
- * @param {number} price - Preço do produto
+ * @param {number} pricePix - Preço do produto para Pix
+ * @param {number} priceCredit - Preço do produto para Crédito
  * @param {number} quantity - Quantidade (padrão 1)
  */
-function addToCart(productName, price, quantity = 1) {
+function addToCart(productName, pricePix, priceCredit, quantity = 1) {
     // Verifica se produto já existe no carrinho
     const existingItem = cartState.items.find(item => item.name === productName);
 
@@ -30,7 +32,8 @@ function addToCart(productName, price, quantity = 1) {
     } else {
         cartState.items.push({
             name: productName,
-            price: price,
+            pricePix: pricePix,
+            priceCredit: priceCredit,
             quantity: quantity,
             id: Date.now()
         });
@@ -61,11 +64,12 @@ function removeFromCart(itemId) {
 }
 
 /**
- * Calcula total do carrinho
+ * Calcula total do carrinho baseado na forma de pagamento
  */
 function updateCartTotal() {
+    const multiplier = cartState.paymentMethod === 'pix' ? 'pricePix' : 'priceCredit';
     cartState.total = cartState.items.reduce((sum, item) => {
-        return sum + (item.price * item.quantity);
+        return sum + (item[multiplier] * item.quantity);
     }, 0);
 }
 
@@ -111,11 +115,13 @@ function renderCartItems() {
         return;
     }
 
+    const priceField = cartState.paymentMethod === 'pix' ? 'pricePix' : 'priceCredit';
+
     cartItemsContainer.innerHTML = cartState.items.map(item => `
         <div class="cart-item">
             <div class="cart-item-info">
                 <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">${item.quantity}x ${formatCurrency(item.price)}</div>
+                <div class="cart-item-price">${item.quantity}x ${formatCurrency(item[priceField])}</div>
             </div>
             <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remover">
                 <i class="fas fa-trash"></i>
@@ -187,13 +193,15 @@ function generateWhatsAppMessage() {
         return null;
     }
 
+    const priceField = cartState.paymentMethod === 'pix' ? 'pricePix' : 'priceCredit';
+    const paymentLabel = cartState.paymentMethod === 'pix' ? '💳 Pix' : '💳 Crédito';
     let message = `*Olá! Gostaria de fazer um pedido:*\n\n`;
 
     // Lista todos os items
     cartState.items.forEach(item => {
-        const itemTotal = item.price * item.quantity;
+        const itemTotal = item[priceField] * item.quantity;
         message += `*${item.name}*\n`;
-        message += `   Preço: ${formatCurrency(item.price)}\n`;
+        message += `   Preço: ${formatCurrency(item[priceField])}\n`;
         message += `   Quantidade: ${item.quantity}\n`;
         message += `   Subtotal: ${formatCurrency(itemTotal)}\n\n`;
     });
@@ -201,6 +209,7 @@ function generateWhatsAppMessage() {
     // Total
     message += `━━━━━━━━━━━━━━━━━━━━━\n`;
     message += `*TOTAL: ${formatCurrency(cartState.total)}*\n`;
+    message += `*Forma de Pagamento: ${paymentLabel}*\n`;
     message += `━━━━━━━━━━━━━━━━━━━━━\n\n`;
     message += `Poderia confirmar disponibilidade e entrega?`;
 
@@ -208,9 +217,32 @@ function generateWhatsAppMessage() {
 }
 
 /**
- * Envia pedido para WhatsApp
+ * Muda a forma de pagamento selecionada
+ * @param {string} method - 'pix' ou 'credit'
  */
-function sendToWhatsApp() {
+function setPaymentMethod(method) {
+    cartState.paymentMethod = method;
+    updateCartTotal();
+    updateCartUI();
+    updatePaymentButtons();
+    showToast(`Forma de pagamento alterada para ${method === 'pix' ? 'Pix' : 'Crédito'}`);
+}
+
+/**
+ * Atualiza o visual dos botões de forma de pagamento
+ */
+function updatePaymentButtons() {
+    const buttons = document.querySelectorAll('.payment-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const activeBtn = document.querySelector(
+        `.payment-btn[onclick="setPaymentMethod('${cartState.paymentMethod}')"]`
+    );
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+    }
+}
     const message = generateWhatsAppMessage();
 
     if (!message) {
@@ -299,6 +331,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     // Inicializa UI do carrinho
     updateCartUI();
+    updatePaymentButtons();
 
     // Scroll reveal animations
     observeElements();
@@ -342,7 +375,11 @@ function observeElements() {
  * Salva carrinho no localStorage
  */
 function saveCart() {
-    localStorage.setItem('lmfitwear_cart', JSON.stringify(cartState));
+    localStorage.setItem('lmfitwear_cart', JSON.stringify({
+        items: cartState.items,
+        total: cartState.total,
+        paymentMethod: cartState.paymentMethod
+    }));
 }
 
 /**
@@ -355,7 +392,9 @@ function loadCart() {
             const parsed = JSON.parse(saved);
             cartState.items = parsed.items || [];
             cartState.total = parsed.total || 0;
+            cartState.paymentMethod = parsed.paymentMethod || 'pix';
             updateCartUI();
+            updatePaymentButtons();
         } catch (e) {
             console.error('Erro ao carregar carrinho:', e);
         }

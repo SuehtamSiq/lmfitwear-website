@@ -88,49 +88,59 @@
                      Cada card mantém a imagem do produto
                      Botão interativo para adicionar ao carrinho
                 -->
-                <article class="trending-card" data-product-id="1">
+                <article class="trending-card" data-product-id="1" data-price-pix="49.99" data-price-credit="49.99">
                     <div class="card-image-wrapper">
                         <img src="src/images/Trending/card1.jpeg" alt="Top Emilly" class="card-image">
                         <div class="card-overlay">
-                            <p class="card-price">R$ 49,99</p>
+                            <div class="card-price">
+                                <span>R$ 49,99</span>
+                                <span class="card-price-badge">Pix</span>
+                            </div>
                         </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Top Emilly</h3>
                         <p class="card-desc">Conforto máximo para treinos intensos</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Top Emilly', 49.99, 1)">
+                        <button class="btn btn-add-cart" onclick="addToCart('Top Emilly', 49.99, 49.99, 1)">
                             <i class="fas fa-plus"></i> Adicionar
                         </button>
                     </div>
                 </article>
 
-                <article class="trending-card" data-product-id="2">
+                <article class="trending-card" data-product-id="2" data-price-pix="89.99" data-price-credit="89.99">
                     <div class="card-image-wrapper">
                         <img src="src/images/Trending/card2.jpeg" alt="Calça Legging Inverno" class="card-image">
                         <div class="card-overlay">
-                            <p class="card-price">R$ 89,99</p>
+                            <div class="card-price">
+                                <span>R$ 89,99</span>
+                                <span class="card-price-badge">Pix</span>
+                            </div>
                         </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Calça Legging Inverno</h3>
                         <p class="card-desc">Tecido premium, moldura perfeita</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Calça Legging Inverno', 89.99, 1)">
+                        <button class="btn btn-add-cart" onclick="addToCart('Calça Legging Inverno', 89.99, 89.99, 1)">
                             <i class="fas fa-plus"></i> Adicionar
                         </button>
                     </div>
                 </article>
 
-                <article class="trending-card" data-product-id="3">
+                <article class="trending-card" data-product-id="3" data-price-pix="114.99" data-price-credit="124.99">
                     <div class="card-image-wrapper">
                         <img src="src/images/Trending/card3.jpeg" alt="Macaquinho Brilhoso" class="card-image">
                         <div class="card-overlay">
-                            <p class="card-price">R$ 123,99</p>
+                            <div class="card-price">
+                                <span>R$ 114,99</span>
+                                <span class="card-price-badge">Pix</span>
+                            </div>
+                            <p class="product-price-credit">R$ 124,99 Crédito</p>
                         </div>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Macaquinho Brilhoso</h3>
                         <p class="card-desc">Elegância e liberdade de movimento</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Macaquinho Brilhoso', 123.99, 1)">
+                        <button class="btn btn-add-cart" onclick="addToCart('Macaquinho Brilhoso', 114.99, 124.99, 1)">
                             <i class="fas fa-plus"></i> Adicionar
                         </button>
                     </div>
@@ -156,9 +166,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Conjunto Izabely</h3>
-                        <p class="product-price">R$ 129,99</p>
+                        <p class="product-price-pix">R$ 119,90 Pix</p>
+                        <p class="product-price-credit">R$ 129,99 Crédito</p>
                         <p class="product-desc">Top + Shorts combinados</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Izabely', 129.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Izabely', 119.90, 129.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -172,9 +183,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Conjunto Silvia</h3>
-                        <p class="product-price">R$ 149,99</p>
+                        <p class="product-price-pix">R$ 139,90 Pix</p>
+                        <p class="product-price-credit">R$ 149,99 Crédito</p>
                         <p class="product-desc">Elegância em movimento</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Silvia', 149.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Silvia', 139.90, 149.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -188,9 +200,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Top Larissa</h3>
-                        <p class="product-price">R$ 49,99</p>
+                        <p class="product-price-pix">R$ 49,99 Pix</p>
+                        <p class="product-price-credit">R$ 54,90 Crédito</p>
                         <p class="product-desc">Frente Única - Versátil</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Top Larissa', 49.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Top Larissa', 49.99, 54.90, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -204,9 +217,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Conjunto Gisele</h3>
-                        <p class="product-price">R$ 114,99</p>
+                        <p class="product-price-pix">R$ 114,90 Pix</p>
+                        <p class="product-price-credit">R$ 124,99 Crédito</p>
                         <p class="product-desc">Conforto premium</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Gisele', 114.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Conjunto Gisele', 114.90, 124.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -220,9 +234,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Jaqueta LM Roxa</h3>
-                        <p class="product-price">R$ 134,99</p>
-                        <p class="product-desc">Cintura alta, moldura perfeita</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Roxa', 134.99, 1)">
+                        <p class="product-price-pix">R$ 134,99 Pix</p>
+                        <p class="product-price-credit">R$ 134,99 Crédito</p>
+                        <p class="product-desc">Conforto, estilo e elegância</p>
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Roxa', 134.99, 134.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -236,9 +251,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Jaqueta LM Lilás</h3>
-                        <p class="product-price">R$ 134,99</p>
+                        <p class="product-price-pix">R$ 134,99 Pix</p>
+                        <p class="product-price-credit">R$ 134,99 Crédito</p>
                         <p class="product-desc">Suporte e elegância</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Lilás', 134.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Lilás', 134.99, 134.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -252,9 +268,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Jaqueta LM Marrom</h3>
-                        <p class="product-price">R$ 134,99</p>
+                        <p class="product-price-pix">R$ 134,99 Pix</p>
+                        <p class="product-price-credit">R$ 134,99 Crédito</p>
                         <p class="product-desc">Mobilidade total</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Marrom', 134.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Marrom', 134.99, 134.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -268,9 +285,10 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Jaqueta LM Preta</h3>
-                        <p class="product-price">R$ 134,99</p>
+                        <p class="product-price-pix">R$ 129,99 Pix</p>
+                        <p class="product-price-credit">R$ 134,99 Crédito</p>
                         <p class="product-desc">Sofisticação em um look</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Preta', 134.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Preta', 129.99, 134.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -334,6 +352,18 @@
                     <i class="fas fa-shopping-bag"></i>
                     <p>Nenhum item adicionado ainda</p>
                     <small>Clique em "Adicionar" nos produtos!</small>
+                </div>
+            </div>
+
+            <div class="payment-selector">
+                <label for="paymentMethod" class="payment-label">Forma de pagamento:</label>
+                <div class="payment-options">
+                    <button class="payment-btn active" onclick="setPaymentMethod('pix')">
+                        <i class="fas fa-qrcode"></i> Pix
+                    </button>
+                    <button class="payment-btn" onclick="setPaymentMethod('credit')">
+                        <i class="fas fa-credit-card"></i> Crédito
+                    </button>
                 </div>
             </div>
 
