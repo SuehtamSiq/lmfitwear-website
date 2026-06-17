@@ -243,6 +243,11 @@ function updatePaymentButtons() {
         activeBtn.classList.add('active');
     }
 }
+
+/**
+ * Envia pedido para WhatsApp
+ */
+function sendToWhatsApp() {
     const message = generateWhatsAppMessage();
 
     if (!message) {
