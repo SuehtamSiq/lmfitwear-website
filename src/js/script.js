@@ -194,7 +194,7 @@ function generateWhatsAppMessage() {
     }
 
     const priceField = cartState.paymentMethod === 'pix' ? 'pricePix' : 'priceCredit';
-    const paymentLabel = cartState.paymentMethod === 'pix' ? '💳 Pix' : '💳 Crédito';
+    const paymentLabel = cartState.paymentMethod === 'pix' ? 'Pix' : 'Crédito';
     let message = `*Olá! Gostaria de fazer um pedido:*\n\n`;
 
     // Lista todos os items

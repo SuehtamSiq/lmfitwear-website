@@ -559,6 +559,7 @@ body {
     opacity: 1;
 }
 
+
 .card-price {
     color: var(--white);
     font-size: 1.3rem;
@@ -567,6 +568,14 @@ body {
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-sm);
+}
+
+.card-price-credit-overlay {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.9;
 }
 
 .card-price-badge {
