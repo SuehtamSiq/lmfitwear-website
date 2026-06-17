@@ -319,15 +319,25 @@ if (cartButton) {
     cartButton.addEventListener('click', toggleCart);
 }
 
-// Fecha carrinho ao clicar fora
+// Fecha carrinho ao clicar fora (e ignorar o botão do header)
 document.addEventListener('click', (e) => {
     const cartWidget = document.getElementById('cartWidget');
     const cartPanel = document.getElementById('cartPanel');
+    
+    // Seleciona o botão do header usando a classe dele
+    const headerCartBtn = document.querySelector('.cart-badge');
 
-    if (cartWidget && !cartWidget.contains(e.target) && cartPanel.classList.contains('active')) {
-        closeCart();
+    if (cartWidget && cartPanel) {
+        // Verifica se o clique NÃO foi no widget E NÃO foi no botão do header
+        const clickedOutsideWidget = !cartWidget.contains(e.target);
+        const clickedHeaderBtn = headerCartBtn && headerCartBtn.contains(e.target);
+
+        if (clickedOutsideWidget && !clickedHeaderBtn && cartPanel.classList.contains('active')) {
+            closeCart();
+        }
     }
 });
+
 
 /* ================================================
    INICIALIZAÇÃO
