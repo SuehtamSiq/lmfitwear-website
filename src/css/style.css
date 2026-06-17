@@ -1031,8 +1031,22 @@ body {
         bottom: 90px; /* Ajustado para ficar logo acima do botão do carrinho */
         left: 20px;
         right: 20px;
-        max-height: 60vh;
+        max-height: 83vh;
     }
+
+    .payment-selector {
+    max-height: 110px;
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--purple-200);
+    background-color: var(--purple-50, #F9F7FF);
+}
+
+    .cart-summary {
+    max-height: 110px;
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--purple-200);
+    background-color: var(--gray-50);
+}
 
     .cart-items {
         max-height: 150px;
