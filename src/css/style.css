@@ -846,7 +846,8 @@ body {
     position: absolute;
     bottom: 80px;
     right: 0;
-    width: 380px;
+    width: 360px;
+    max-height: 70vh;
     background: var(--white);
     border-radius: 16px;
     box-shadow: var(--shadow-xl);
@@ -890,9 +891,10 @@ body {
 }
 
 .cart-items {
-    max-height: 300px;
+    max-height: 200px;
     overflow-y: auto;
     padding: var(--spacing-lg);
+    flex: 1;
 }
 
 .payment-selector {
@@ -1022,13 +1024,18 @@ body {
 @media (max-width: 480px) {
     .cart-panel {
         /* Muda para fixed para alinhar com base na tela inteira, não no botão */
-        position: fixed; 
+        position: fixed;
         /* Define a largura total menos as margens laterais */
-        width: calc(100vw - 40px); 
+        width: calc(100vw - 40px);
         /* Posiciona fixo a 20px de cada borda da tela */
         bottom: 90px; /* Ajustado para ficar logo acima do botão do carrinho */
         left: 20px;
         right: 20px;
+        max-height: 60vh;
+    }
+
+    .cart-items {
+        max-height: 150px;
     }
 }
 
