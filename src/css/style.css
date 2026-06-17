@@ -847,7 +847,7 @@ body {
     bottom: 80px;
     right: 0;
     width: 360px;
-    max-height: 70vh;
+    max-height: 530px;
     background: var(--white);
     border-radius: 16px;
     box-shadow: var(--shadow-xl);
@@ -891,7 +891,7 @@ body {
 }
 
 .cart-items {
-    max-height: 200px;
+    max-height: 350px;
     overflow-y: auto;
     padding: var(--spacing-lg);
     flex: 1;
