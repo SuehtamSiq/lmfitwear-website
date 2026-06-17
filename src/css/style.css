@@ -245,11 +245,18 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-normal);
+    border: none;
+    position: relative;
+    box-shadow: var(--shadow-md);
 }
 
 .cart-badge:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.cart-badge:active {
+    transform: translateY(0);
 }
 
 .badge-count {
