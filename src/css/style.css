@@ -728,7 +728,7 @@ body {
 }
 
 .about-container {
-    max-width: 1200px;
+    max-width: 1050px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -785,6 +785,48 @@ body {
     color: var(--accent-success);
     font-size: 1.2rem;
 }
+
+.policy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+/* Estilo do texto de introdução */
+.policy-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl, 40px);
+}
+
+.policy-intro {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto; 
+}
+
+.policy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl, 40px);
+    align-items: start;
+}
+
+.policy-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.policy-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--purple-600);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
 
 @media (max-width: 767px) {
     .about-container {
