@@ -88,7 +88,7 @@
                      Cada card mantém a imagem do produto
                      Botão interativo para adicionar ao carrinho
                 -->
-                <article class="trending-card" data-product-id="1" data-price-pix="49.99" data-price-credit="49.99">
+                <article class="trending-card" data-product-id="1" data-price-pix="49.99" data-price-credit="54.90">
                     <div class="card-image-wrapper">
                         <img src="src/images/Trending/card1.jpeg" alt="Top Emilly" class="card-image">
                         <div class="card-overlay">
@@ -102,13 +102,13 @@
                     <div class="card-content">
                         <h3 class="card-title">Top Emilly</h3>
                         <p class="card-desc">Conforto máximo para treinos intensos</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Top Emilly', 49.99, 49.99, 1)">
+                        <button class="btn btn-add-cart" onclick="addToCart('Top Emilly', 49.99, 54.90, 1)">
                             <i class="fas fa-plus"></i> Adicionar
                         </button>
                     </div>
                 </article>
 
-                <article class="trending-card" data-product-id="2" data-price-pix="89.99" data-price-credit="89.99">
+                <article class="trending-card" data-product-id="2" data-price-pix="89.99" data-price-credit="99.90">
                     <div class="card-image-wrapper">
                         <img src="src/images/Trending/card2.jpeg" alt="Calça Legging Inverno" class="card-image">
                         <div class="card-overlay">
@@ -122,7 +122,7 @@
                     <div class="card-content">
                         <h3 class="card-title">Calça Legging Inverno</h3>
                         <p class="card-desc">Tecido premium, moldura perfeita</p>
-                        <button class="btn btn-add-cart" onclick="addToCart('Calça Legging Inverno', 89.99, 89.99, 1)">
+                        <button class="btn btn-add-cart" onclick="addToCart('Calça Legging Inverno', 89.99, 99.90, 1)">
                             <i class="fas fa-plus"></i> Adicionar
                         </button>
                     </div>
@@ -239,7 +239,7 @@
                         <p class="product-price-pix">R$ 129,99 Pix</p>
                         <p class="product-price-credit">R$ 134,99 </p>
                         <p class="product-desc">Conforto, estilo e elegância</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Roxa', 134.99, 134.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Roxa', 129.99, 134.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -256,7 +256,7 @@
                         <p class="product-price-pix">R$ 129,99 Pix</p>
                         <p class="product-price-credit">R$ 134,99 </p>
                         <p class="product-desc">Suporte e elegância</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Lilás', 134.99, 134.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Lilás', 129.99, 134.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -273,7 +273,7 @@
                         <p class="product-price-pix">R$ 129,99 Pix</p>
                         <p class="product-price-credit">R$ 134,99 </p>
                         <p class="product-desc">Mobilidade total</p>
-                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Marrom', 134.99, 134.99, 1)">
+                        <button class="btn btn-add-cart-small" onclick="addToCart('Jaqueta LM Marrom', 129.99, 134.99, 1)">
                             <i class="fas fa-shopping-bag"></i> Adicionar
                         </button>
                     </div>
@@ -324,36 +324,128 @@
              </section>
     <!-- ============================================ 
             SEÇÃO POLÍTICA DE TROCA E DEVOLUÇÕES 
-        ============================================ 
+        ============================================ -->
         <section id="exchange-policy"> 
-            <div class="policy-container">  --> 
+            <div class="policy-container"> 
 
-                <!-- INTRODUÇÃO DA SEÇÃO 
+                <!-- INTRODUÇÃO DA SEÇÃO -->
                 <div class="policy-header">
                     <p class="policy-intro">Na LM Fitwear, sua satisfação é nossa prioridade. Conheça nossa política de trocas e devoluções.</p>
-                </div> -->
+                </div> 
                 
-                <!-- <div class="policy-grid">
-                    Coluna 1: Trocas 
-                    <div class="policy-column"> 
-                        <h2 class="policy-title">Política de Troca</h2> 
-                    </div> -->
+                 <div class="policy-grid">
+                <!-- Coluna 1: Trocas -->
+                <div class="policy-column"> 
+                    <h2 class="policy-title">Política de Troca</h2> 
+                    
+                    <div class="policy-steps">
+                        <!-- Item 1: Prazo -->
+                        <div class="policy-item">
+                            <div class="policy-icon-wrapper">
+                                <i class="fa-solid fa-calendar-days"></i> <!-- Ícone de Calendário -->
+                            </div>
+                            <div class="policy-text-block">
+                                <h3 class="policy-subtitle">1. PRAZO</h3>
+                                <p class="policy-desc">Solicitações de troca podem ser feitas em até <strong>7 dias corridos</strong> após o recebimento do pedido.</p>
+                            </div>
+                        </div>
 
-                    <!-- Coluna 2: Devoluções 
-                        <div class="policy-column"> 
-                        <h2 class="policy-title">Devoluções</h2> 
-                        Seus futuros textos e informações de devolução vão aqui 
-                    </div> 
+                        <!-- Item 2: Condições -->
+                        <div class="policy-item">
+                            <div class="policy-icon-wrapper">
+                                <i class="fa-solid fa-shirt"></i> <!-- Ícone de Camiseta -->
+                            </div>
+                            <div class="policy-text-block">
+                                <h3 class="policy-subtitle">2. CONDIÇÕES DAS PEÇAS</h3>
+                                <p class="policy-desc">As peças devem estar:</p>
+                                <ul class="policy-sublist">
+                                    <li>Sem sinais de uso</li>
+                                    <li>Sem odores ou manchas</li>
+                                    <li>Com etiqueta fixada</li>
+                                    <li>Na embalagem original</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Opções -->
+                        <div class="policy-item">
+                            <div class="policy-icon-wrapper">
+                                <i class="fa-solid fa-arrows-rotate"></i> <!-- Ícone de Setas de Troca -->
+                            </div>
+                            <div class="policy-text-block">
+                                <h3 class="policy-subtitle">3. A TROCA PODE SER FEITA POR:</h3>
+                                <ul class="policy-sublist">
+                                    <li>Outro tamanho disponível</li>
+                                    <li>Outra peça do catálogo (mediante disponibilidade)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Frete -->
+                        <div class="policy-item">
+                            <div class="policy-icon-wrapper">
+                                <i class="fa-solid fa-truck"></i> <!-- Ícone de Caminhão -->
+                            </div>
+                            <div class="policy-text-block">
+                                <h3 class="policy-subtitle">4. Frete:</h3>
+                                <p class="policy-desc">O frete da troca é de responsabilidade da cliente, exceto em casos de defeito de fabricação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Coluna 2: Devoluções -->
+                <div class="policy-column"> 
+                    <h2 class="policy-title">Devoluções</h2> 
+                    
+                    <div class="policy-steps">
+                        <!-- Item 1: Prazo de Arrependimento -->
+                        <div class="policy-item">
+                            <div class="policy-icon-wrapper">
+                                <i class="fa-solid fa-clock"></i> <!-- Ícone de Relógio/Tempo -->
+                            </div>
+                            <div class="policy-text-block">
+                                <h3 class="policy-subtitle">1. PRAZO</h3>
+                                <p class="policy-desc">Pelo direito de arrependimento, você pode solicitar a devolução em até <strong>7 dias corridos</strong> após o recebimento.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Condições para Devolução -->
+                        <div class="policy-item">
+                            <div class="policy-icon-wrapper">
+                                <i class="fa-solid fa-clipboard-check"></i> <!-- Ícone de Verificação -->
+                            </div>
+                            <div class="policy-text-block">
+                                <h3 class="policy-subtitle">2. CONDIÇÕES DO PRODUTO</h3>
+                                <p class="policy-desc">O produto deve ser devolvido exatamente como foi entregue, sem uso, com etiqueta e na embalagem original.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Estorno / Reembolso -->
+                        <div class="policy-item">
+                            <div class="policy-icon-wrapper">
+                                <i class="fa-solid fa-hand-holding-dollar"></i> <!-- Ícone de Reembolso/Dinheiro -->
+                            </div>
+                            <div class="policy-text-block">
+                                <h3 class="policy-subtitle">3. REEMBOLSO DO VALOR</h3>
+                                <p class="policy-desc">O estorno será feito pelo mesmo método de pagamento utilizado na compra após o produto chegar e ser analisado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 </div>
 
             </div> 
-        </section> -->
+        </section> 
 
 
         <!-- ============================================
              SEÇÃO FRETE
-             ============================================ 
-        <section id="frete">
+             ============================================ -->
+        <!--<section id="frete">
                 <div class="frete-container">
                     <div class="frete-content">
                         <h2>Frete</h2>
@@ -431,5 +523,6 @@
     </div>
     <!-- Scripts -->
     <script src="src/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/386656289b.js" crossorigin="anonymous"></script>
 </body>
 </html>

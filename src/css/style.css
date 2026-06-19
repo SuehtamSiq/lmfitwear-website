@@ -827,6 +827,87 @@ body {
     text-align: center;
 }
 
+/* Container dos tópicos */
+.policy-steps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl, 30px);
+    margin-top: var(--spacing-lg, 20px);
+}
+
+/* Alinhamento do ícone com o texto lateral */
+.policy-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md, 15px);
+    text-align: left;
+    width: 100%;
+    
+    /* Linha divisória */
+    border-bottom: 1px solid #e2d9f3; /* Linha roxa bem clarinha e suave */
+    padding-bottom: var(--spacing-xl, 25px); /* Espaço entre o texto e a linha */
+}
+
+/* Remove a linha divisória do último item da lista */
+.policy-item:not(:last-child) {
+    /* Garante que apenas os itens que possuem um próximo recebam a borda, 
+    este seletor serve para resetar o último */
+}
+
+/* Correção elegante para aplicar apenas onde há continuação: */
+.policy-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Círculo do ícone */
+.policy-icon-wrapper {
+    background-color: #e8def8; /* Roxo bem claro de fundo da bolinha */
+    color: var(--purple-600);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0; /* Impede a bolinha de amassar se o texto for grande */
+}
+
+/* Títulos internos */
+.policy-subtitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--purple-600);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Textos descritivos */
+.policy-desc, .policy-sublist {
+    font-size: 0.9rem;
+    color: #555; /* Tom cinza escuro para leitura confortável */
+    line-height: 1.5;
+}
+
+/* Destaque para os "7 dias corridos" */
+.policy-desc strong {
+    color: var(--purple-600);
+    font-weight: 700;
+}
+
+/* Listas internas com marcadores */
+.policy-sublist {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.policy-sublist li {
+    margin-bottom: 4px;
+}
+
 
 @media (max-width: 767px) {
     .about-container {
@@ -1164,6 +1245,15 @@ body {
     .section-divider {
         margin: var(--spacing-xl) 0;
     }
+
+    .policy-grid {
+        grid-template-columns: 1fr; /* Transforma as duas colunas em uma só */
+        gap: var(--spacing-2xl, 40px); /* Dá um bom espaço vertical entre Troca e Devolução */
+    }
+
+    .policy-column {
+        padding: 0 10px; /* Margem interna para o texto não colar nas bordas do celular */
+    }
 }
 
 @media (max-width: 480px) {
@@ -1188,6 +1278,28 @@ body {
     .btn {
         padding: 10px 20px;
         font-size: 0.85rem;
+    }
+
+    .policy-intro {
+        font-size: 1.05rem; /* Texto de introdução ligeiramente menor */
+    }
+
+    .policy-title {
+        font-size: 1.3rem; /* Títulos principais mais compactos */
+    }
+
+    .policy-icon-wrapper {
+        width: 42px;  /* Diminui um pouco o tamanho da bolinha do ícone */
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    .policy-subtitle {
+        font-size: 0.85rem; /* Ajusta os subtítulos (ex: 1. PRAZO) */
+    }
+
+    .policy-desc, .policy-sublist {
+        font-size: 0.85rem; /* Ajusta os textos descritivos */
     }
 }
 
